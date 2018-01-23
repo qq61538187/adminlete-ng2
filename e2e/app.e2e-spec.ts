@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('admin-lte App', () => {
+describe('ng2-demo App', () => {
   let page: AppPage;
 
   beforeEach(() => {
