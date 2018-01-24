@@ -13,3 +13,29 @@ ng g s my-new-service //
 新建一个自带有路由项目：
 ng new helloWorld --routing
 /************************AngularJS CLI 常用命令END************************/
+
+
+
+/************************AngularJS providers提供器 Start************************/
+提供方式:
+useFactory
+useClass
+useValue
+
+优先级
+ providers: [
+    {provide: StockService, useFactory:
+      (logger: LoggerService, isDev) => {
+      console.log(isDev);
+      if(isDev) {
+        return new StockService(logger);
+      }else{
+        return new AnotherStockService(logger);
+      }
+    }, deps: [LoggerService, "IS_DEV_ENV"]}
+    , LoggerService,
+    {provide: "IS_DEV_ENV", useValue: {isDev: true}}
+
+
+
+/************************AngularJS providers提供器 end************************/
