@@ -3,11 +3,13 @@ import { HttpConfig } from "../providers/http-config.service";
 import {
   Http, Response, Headers, RequestOptions, URLSearchParams, RequestOptionsArgs, RequestMethod
 } from '@angular/http';
-import {Subscriber} from 'rxjs/Subscriber';
-import { Observable, TimeoutError } from "rxjs";
 import { Logger } from "./logger.service";
 import { UtilsService } from "./utils.service"
 import { CommonModel } from "./common-model.service";
+import {Subscriber} from 'rxjs/Subscriber';
+import { Observable, TimeoutError } from "rxjs";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/timeout';
 @Injectable()
 export class HttpService {
   IS_DEBUG;
@@ -19,13 +21,15 @@ export class HttpService {
   ) {
     console.log(this.httpConfig.host.bl)
   }
-  
+
+
+
+
   public request(url: string, options: RequestOptionsArgs) {
     this.optionsAddToken(options);
     return Observable.create((observer: Subscriber<any>) => {
         this.IS_DEBUG && console.log('%c 请求前 %c', 'color:blue', '', 'url', url, 'options', options);
-      // this.http.request(url, options).timeout(1000).subscribe(res => {
-        this.http.request(url, options).subscribe(res => {
+      this.http.request(url, options).timeout(this.httpConfig.timeout).subscribe(res => {
         this.IS_DEBUG && console.log('%c 请求成功 %c', 'color:green', '', 'url', url, 'options', options, 'res', res);
         if (res['_body'] == '') {
           res['_body'] = null;
