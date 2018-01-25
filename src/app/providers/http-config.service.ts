@@ -1,3 +1,4 @@
+import { TimeoutError } from 'rxjs';
 export class HttpConfig {
    /***请求头部信息  决定着打包是域还是店铺 和跳转页面开始*/ 
    space ='DF4D69929FD7F405';
@@ -42,5 +43,12 @@ export class HttpConfig {
    host = this.hostList.test;
    /********接口名称 调用方法最好和此明明一样 方便后期搜索******/
    version = '/';
+   timeout = 10000;
+   
+   
+   /***第三方配置信息***/
+   APP_VERSION = 'v1.0.01';
+   FUNDEBUG_API_KEY = 'a591e119d77cec4a0b914b8fff19bfa3567cd260e0e964d134c6f3f9e634d792';
+
 
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CommonModel {
-
-  constructor() { }
+ public userId:any
+ 
 
 }
