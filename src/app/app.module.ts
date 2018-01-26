@@ -1,6 +1,10 @@
+import { NgModule, ErrorHandler } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule,ErrorHandler } from '@angular/core';
-import {HttpModule} from "@angular/http";
+import { HttpModule } from "@angular/http";
+import { AppRoutingModule } from './providers/app-routing.module';
+
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './public/header/header.component';
@@ -16,6 +20,12 @@ import { MainCtrl } from "./providers/main-ctrl.service";
 import { UtilsService } from "./providers/utils.service";
 import { Logger}from "./providers/logger.service" 
 import * as fundebug from "fundebug-javascript";
+import { NoteListComponent } from './pages/note/note-list/note-list.component';
+import { NewNoteComponent } from './pages/note/new-note/new-note.component';
+import { NoteClassifyComponent } from './pages/note/note-classify/note-classify.component';
+import { NoteCommentsComponent } from './pages/note/note-comments/note-comments.component';
+import { NoteLableComponent } from './pages/note/note-lable/note-lable.component';
+import { NoteSpecialComponent } from './pages/note/note-special/note-special.component';
 export class FunDebugErrorHandler implements ErrorHandler {
   handleError(err: any): void {
     fundebug.notifyError(err);
@@ -30,10 +40,17 @@ export class FunDebugErrorHandler implements ErrorHandler {
     FooterComponent,
     MenuComponent,
     SidebarComponent,
+    NoteListComponent,
+    NewNoteComponent,
+    NoteClassifyComponent,
+    NoteCommentsComponent,
+    NoteLableComponent,
+    NoteSpecialComponent,
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [
     HttpConfig,

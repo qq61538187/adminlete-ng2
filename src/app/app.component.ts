@@ -10,13 +10,7 @@ export class AppComponent {
   constructor(private httpService: HttpService,
   private mainCtrl:MainCtrl) { 
     this.mainCtrl.setPlatfrom();
-    this.mainCtrl.httpService.get(this.mainCtrl.httpService.httpConfig.host.bl + 'platformset/selectConfigInfo').subscribe(data => {
-      if (data.success) {
-          console.log(data)
-      } else {
-         
-      }
-  })
+
 
   }
 }
