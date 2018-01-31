@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { MainCtrlService } from './main-ctrl.service';
+import { MainCtrl } from './main-ctrl.service';
 
-describe('MainCtrlService', () => {
+describe('MainCtrl', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MainCtrlService]
+      providers: [MainCtrl]
     });
   });
 
-  it('should be created', inject([MainCtrlService], (service: MainCtrlService) => {
+  it('should be created', inject([MainCtrl], (service: MainCtrl) => {
     expect(service).toBeTruthy();
   }));
 });

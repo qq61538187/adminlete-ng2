@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CommonModelService } from './common-model.service';
+import { CommonModel } from './common-model.service';
 
-describe('CommonModelService', () => {
+describe('CommonModel', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CommonModelService]
+      providers: [CommonModel]
     });
   });
 
-  it('should be created', inject([CommonModelService], (service: CommonModelService) => {
+  it('should be created', inject([CommonModel], (service: CommonModel) => {
     expect(service).toBeTruthy();
   }));
 });
