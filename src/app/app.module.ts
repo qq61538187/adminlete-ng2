@@ -26,6 +26,8 @@ import { NoteClassifyComponent } from './pages/note/note-classify/note-classify.
 import { NoteCommentsComponent } from './pages/note/note-comments/note-comments.component';
 import { NoteLableComponent } from './pages/note/note-lable/note-lable.component';
 import { NoteSpecialComponent } from './pages/note/note-special/note-special.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { NoteDetailComponent } from './pages/note/note-detail/note-detail.component';
 export class FunDebugErrorHandler implements ErrorHandler {
   handleError(err: any): void {
     fundebug.notifyError(err);
@@ -46,6 +48,8 @@ export class FunDebugErrorHandler implements ErrorHandler {
     NoteCommentsComponent,
     NoteLableComponent,
     NoteSpecialComponent,
+    ErrorPageComponent,
+    NoteDetailComponent,
   ],
   imports: [
     BrowserModule,

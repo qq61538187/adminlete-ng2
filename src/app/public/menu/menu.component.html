@@ -1,7 +1,5 @@
 <aside class="main-sidebar">
-  <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
-    <!-- Sidebar user panel -->
     <div class="user-panel">
       <div class="pull-left image">
         <img src="assets/img/user2-160x160.gif" class="img-circle" alt="User Image">
@@ -13,7 +11,6 @@
     </div>
 
     <ul class="sidebar-menu" data-widget="tree">
-      <!-- <li class="header">MAIN NAVIGATION</li> -->
       <li class="treeview">
         <a href="#">
           <i class="fa fa-file-text-o"></i> <span>文章</span>
@@ -22,12 +19,30 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="active"><a>所有文章</a></li>
+          <!-- routerLink    /开头代表根路由 ./开头代表子路由 -->
+          <!-- <li class="active"><a [routerLink]="['/noteClassify']">所有文章</a></li> -->
+          <li class="active"><a (click)="mainCtrl.goPage('/noteClassify')">所有文章</a></li>
           <li><a >撰写文章</a></li>
           <li><a >分类</a></li>
           <li><a >专题</a></li>
           <li><a >标签</a></li>
           <li><a >评论</a></li>
+
+          <!-- 参数传递start -->
+          <!-- <li><a routerLink]="['/noteDetail']" [queryParams]="{id:1}">文章详情</a></li> -->
+          <!-- http://localhost:4200/noteDetail?id=1 -->
+          <!-- this.activatedRoute.snapshot.queryParams["id"]; -->
+          <li><a (click)="mainCtrl.goPage('/noteDetail/341222')">文章详情</a></li>
+          <!-- http://localhost:4200/noteDetail/341222-->
+          <!-- this.activatedRoute.snapshot.params["id"]; -->
+
+
+          <!-- 注意事项 当路由可能路由到自身时 不要从快照里面取值snapshot  需要订阅subscribe -->
+          <!-- this.activatedRoute.params.subscribe((params: Params) => { 
+            this.noteId=params["id"]
+          }) -->
+          <!-- this.noteId = this.activatedRoute.snapshot.params["id"]; -->
+          <!-- 参数传递end -->
         </ul>
       </li>
 

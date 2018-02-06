@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NoteListComponent } from '../pages/note/note-list/note-list.component';
 import { NoteClassifyComponent } from '../pages/note/note-classify/note-classify.component';
-
+import { ErrorPageComponent } from '../pages/error-page/error-page.component';
+import { NoteDetailComponent } from '../pages/note/note-detail/note-detail.component';
 const routes: Routes = [
   {path: '',component:NoteListComponent},
-  {path: 'noteClassify',component:NoteClassifyComponent}
+  { path: 'noteClassify', component: NoteClassifyComponent },
+  { path: 'noteDetail/:id', component: NoteDetailComponent },
+  { path:'**',component:ErrorPageComponent}//路由不存在页面 位置是放最后
 ];
 
 @NgModule({
@@ -19,6 +22,18 @@ export class AppRoutingModule {
   //RouterLink  在html声明路由导航指令
   //ActivtedRoute 当前激活的路由对象  保存着当前路由的信息,如路由地址路由参数
 
+
+  
+  //页面传递数据
+
+  //1-路由传递数据
+  //localhost:4200/noteDetail?id=1&name=2  => ActivatedRoute.queryParams[id]
+
+  //2-路由路径传递数据
+  // { path: 'noteDetail/:id', component: NoteDetailComponent }=>ActivatedRoute.params[id];
+
+  //3-路由中配置静态数据
+  // { path: 'noteDetail', component: NoteDetailComponent, data: [{id:1}] }=>ActivatedRoute.data[0][id];
 
 
 

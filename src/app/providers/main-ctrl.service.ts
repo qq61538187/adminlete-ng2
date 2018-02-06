@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from "./http-service.service";
-import { UtilsService } from "./utils.service"
+import { UtilsService } from "./utils.service";
+import { Router } from "@angular/router";
 import * as fundebug from "fundebug-javascript";
 @Injectable()
 export class MainCtrl {
 
   constructor(
     public httpService: HttpService,
-    public utilsService:UtilsService
+    public utilsService: UtilsService,
+    private router:Router
   ) { }
 
 /**
@@ -41,6 +43,14 @@ export class MainCtrl {
     }
   }
 
+
+  /**
+   * 
+   * @param url 跳转链接
+   */
+  goPage(url, data = {}) { 
+    this.router.navigate([url,data])
+  }
 
 
 

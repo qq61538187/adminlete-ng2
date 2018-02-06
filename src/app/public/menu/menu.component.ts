@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MainCtrl} from "../../providers/main-ctrl.service";
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private mainCtrl:MainCtrl
+  ) { }
 
   ngOnInit() {
   }
