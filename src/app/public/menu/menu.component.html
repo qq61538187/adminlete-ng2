@@ -22,7 +22,7 @@
           <!-- routerLink    /开头代表根路由 ./开头代表子路由 -->
           <!-- <li class="active"><a [routerLink]="['/noteClassify']">所有文章</a></li> -->
           <li class="active"><a (click)="mainCtrl.goPage('/noteList')">所有文章</a></li>
-          <li><a >撰写文章</a></li>
+          <li><a (click)="mainCtrl.goPage('/noteEdit')">撰写文章</a></li>
           <li><a >分类</a></li>
           <li><a >专题</a></li>
           <li><a >标签</a></li>

@@ -4,8 +4,10 @@ import { NoteListComponent } from '../pages/note/note-list/note-list.component';
 import { NoteClassifyComponent } from '../pages/note/note-classify/note-classify.component';
 import { ErrorPageComponent } from '../pages/error-page/error-page.component';
 import { NoteDetailComponent } from '../pages/note/note-detail/note-detail.component';
+import { NewNoteComponent } from './../pages/note/new-note/new-note.component';
 const routes: Routes = [
-  {path: 'noteList',component:NoteListComponent},
+  { path: 'noteList', component: NoteListComponent },
+  {path:'noteEdit',component:NewNoteComponent},
   { path: 'noteClassify', component: NoteClassifyComponent },
   { path: 'noteDetail/:id', component: NoteDetailComponent },
   { path:'**',component:ErrorPageComponent}//路由不存在页面 位置是放最后
