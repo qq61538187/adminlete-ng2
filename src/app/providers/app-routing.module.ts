@@ -5,7 +5,7 @@ import { NoteClassifyComponent } from '../pages/note/note-classify/note-classify
 import { ErrorPageComponent } from '../pages/error-page/error-page.component';
 import { NoteDetailComponent } from '../pages/note/note-detail/note-detail.component';
 const routes: Routes = [
-  {path: '',component:NoteListComponent},
+  {path: 'noteList',component:NoteListComponent},
   { path: 'noteClassify', component: NoteClassifyComponent },
   { path: 'noteDetail/:id', component: NoteDetailComponent },
   { path:'**',component:ErrorPageComponent}//路由不存在页面 位置是放最后
