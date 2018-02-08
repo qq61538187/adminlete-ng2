@@ -20,17 +20,24 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/font-awesome/css/font-awesome.min.css",
-        "../node_modules/ionicons/dist/css/ionicons.min.css",
-        "../node_modules/jvectormap/jquery-jvectormap.css",
-        "../node_modules/adminlte/dist/css/AdminLTE.min.css",
-        "../node_modules/adminlte/dist/css/skins/_all-skins.min.css"
+        "assets/static/bootstrap/css/bootstrap.min.css",
+        "assets/static/font-awesome/css/font-awesome.css",
+        "assets/static/lte/css/AdminLTE.css",
+        "assets/static/lte/css/skins/_all-skins.css",
+        "assets/static/plugins/toastr/toastr.css",
+        "assets/static/jpress/admin/css/common.css",
+        "assets/static/layer/skin/layer.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../node_modules/adminlte/dist/js/adminlte.min.js"
+        "assets/static/plugins/jquery/jquery-2.1.4.min.js",
+        "assets/static/plugins/jquery/jquery.form.min.js",
+        "assets/static/bootstrap/js/bootstrap.min.js",
+        "assets/static/plugins/fastclick/fastclick.min.js",
+        "assets/static/lte/js/app.js",
+        "assets/static/jpress/admin/js/common.js",
+        "assets/static/layer/layer.js",
+        "assets/static/plugins/pace/pace.min.js",
+        "assets/static/plugins/toastr/toastr.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
