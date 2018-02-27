@@ -21,18 +21,19 @@
         <ul class="treeview-menu">
           <!-- routerLink    /开头代表根路由 ./开头代表子路由 -->
           <!-- <li class="active"><a [routerLink]="['/noteClassify']">所有文章</a></li> -->
-          <li class="active"><a (click)="mainCtrl.goPage('/noteList')">所有文章</a></li>
-          <li><a (click)="mainCtrl.goPage('/noteEdit')">撰写文章</a></li>
+          <li class="active"><a (click)="mainCtrl.goPage('/note/noteList')">所有文章</a></li>
+          <li><a (click)="mainCtrl.goPage('/note/noteEdit')">撰写文章</a></li>
           <li><a >分类</a></li>
           <li><a >专题</a></li>
           <li><a >标签</a></li>
           <li><a >评论</a></li>
 
+          
           <!-- 参数传递start -->
           <!-- <li><a routerLink]="['/noteDetail']" [queryParams]="{id:1}">文章详情</a></li> -->
           <!-- http://localhost:4200/noteDetail?id=1 -->
           <!-- this.activatedRoute.snapshot.queryParams["id"]; -->
-          <li><a (click)="mainCtrl.goPage('/noteDetail/341222')">文章详情</a></li>
+          <li><a (click)="mainCtrl.goPage('/note/noteDetail/341222')">文章详情</a></li>
           <!-- http://localhost:4200/noteDetail/341222-->
           <!-- this.activatedRoute.snapshot.params["id"]; -->
 

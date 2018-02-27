@@ -28,6 +28,8 @@ import { NoteLableComponent } from './pages/note/note-lable/note-lable.component
 import { NoteSpecialComponent } from './pages/note/note-special/note-special.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { NoteDetailComponent } from './pages/note/note-detail/note-detail.component';
+import { NoteComponent } from './pages/note/note.component';
+import { FloatRightComponent } from './public/float-right/float-right.component';
 export class FunDebugErrorHandler implements ErrorHandler {
   handleError(err: any): void {
     fundebug.notifyError(err);
@@ -50,6 +52,8 @@ export class FunDebugErrorHandler implements ErrorHandler {
     NoteSpecialComponent,
     ErrorPageComponent,
     NoteDetailComponent,
+    NoteComponent,
+    FloatRightComponent,
   ],
   imports: [
     BrowserModule,

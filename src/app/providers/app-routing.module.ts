@@ -5,12 +5,25 @@ import { NoteClassifyComponent } from '../pages/note/note-classify/note-classify
 import { ErrorPageComponent } from '../pages/error-page/error-page.component';
 import { NoteDetailComponent } from '../pages/note/note-detail/note-detail.component';
 import { NewNoteComponent } from './../pages/note/new-note/new-note.component';
+import { NoteComponent } from '../pages/note/note.component';
+import { FloatRightComponent } from '../public/float-right/float-right.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/noteList',pathMatch:'full' },//重定向路由 full：精准匹配  prefix 包含匹配
-  { path: 'noteList', component: NoteListComponent },
-  {path:'noteEdit',component:NewNoteComponent},
-  { path: 'noteClassify', component: NoteClassifyComponent },
-  { path: 'noteDetail/:id', component: NoteDetailComponent },
+  { path: '', redirectTo: '/note/noteList', pathMatch: 'full' },//重定向路由 full：精准匹配  prefix 包含匹配
+  {path: 'note', component: NoteComponent, children: [
+    { path: '', redirectTo: 'noteList', pathMatch: 'full' },
+    { path: 'noteList', component: NoteListComponent },
+    {path:'noteEdit',component:NewNoteComponent},
+    { path: 'noteClassify', component: NoteClassifyComponent },
+    { path: 'noteDetail/:id', component: NoteDetailComponent },
+  ]
+  }, //子路由配置信息 
+  { path: 'floatright', component: FloatRightComponent, outlet: 'floatright' },//辅助路由
+  // <li><a   [routerLink]="[{outlets:{primary:'/note',floatright:'floatright'}}]">开启辅助路由</a></li> 
+  // <li><a   [routerLink]="[{outlets:{floatright:'floatright'}}]">开启辅助路由</a></li>
+  // <li><a   [routerLink]="[{outlets:{floatright:null}}]">关闭辅助路由</a></li>
+
+
+
   { path:'**',component:ErrorPageComponent}//默认路由 路由不存在页面 位置是放最后
 ];
 
@@ -37,6 +50,19 @@ export class AppRoutingModule {
 
   //3-路由中配置静态数据
   // { path: 'noteDetail', component: NoteDetailComponent, data: [{id:1}] }=>ActivatedRoute.data[0][id];
+
+
+  //辅助路由
+  //1:配置 { path: 'floatright', component: FloatRightComponent, outlet: 'floatright' },//辅助路由
+  //2:组件使用主控制文件添加    <router-outlet name="floatright"></router-outlet>  
+  /**3:使用方法
+  <li><a   [routerLink]="[{outlets:{primary:'/note',floatright:'floatright'}}]">开启辅助路由</a></li> //primary 控制当前显示哪个路由  
+  <li><a   [routerLink]="[{outlets:{floatright:'floatright'}}]">开启辅助路由</a></li>
+  <li><a   [routerLink]="[{outlets:{floatright:null}}]">关闭辅助路由</a></li>
+   * 
+  */
+  
+
 
 
 

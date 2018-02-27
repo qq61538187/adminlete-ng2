@@ -1,0 +1,8 @@
+.consult{
+  background: yellowgreen;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
