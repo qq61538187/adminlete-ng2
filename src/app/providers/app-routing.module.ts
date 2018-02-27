@@ -6,11 +6,12 @@ import { ErrorPageComponent } from '../pages/error-page/error-page.component';
 import { NoteDetailComponent } from '../pages/note/note-detail/note-detail.component';
 import { NewNoteComponent } from './../pages/note/new-note/new-note.component';
 const routes: Routes = [
+  { path: '', redirectTo: '/noteList',pathMatch:'full' },//重定向路由 full：精准匹配  prefix 包含匹配
   { path: 'noteList', component: NoteListComponent },
   {path:'noteEdit',component:NewNoteComponent},
   { path: 'noteClassify', component: NoteClassifyComponent },
   { path: 'noteDetail/:id', component: NoteDetailComponent },
-  { path:'**',component:ErrorPageComponent}//路由不存在页面 位置是放最后
+  { path:'**',component:ErrorPageComponent}//默认路由 路由不存在页面 位置是放最后
 ];
 
 @NgModule({
