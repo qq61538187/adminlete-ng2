@@ -9,6 +9,7 @@ import { NoteComponent } from '../pages/note/note.component';
 import { FloatRightComponent } from '../public/float-right/float-right.component';
 import { CanActivateGuard } from './guards/canActivate.guard';
 import { CanDeactivateGuard } from './guards/canDeactivate.guard';
+import { NoteResolve } from './guards/noteDetail.resolve';
 const routes: Routes = [
   { path: '', redirectTo: '/note/noteList', pathMatch: 'full' },//重定向路由 full：精准匹配  prefix 包含匹配
   {path: 'note', component: NoteComponent, children: [
@@ -16,7 +17,9 @@ const routes: Routes = [
     { path: 'noteList', component: NoteListComponent },
     {path:'noteEdit',component:NewNoteComponent},
     { path: 'noteClassify', component: NoteClassifyComponent },
-    { path: 'noteDetail/:id', component: NoteDetailComponent },
+    { path: 'noteDetail/:id', component: NoteDetailComponent,resolve: {
+      stock: NoteResolve
+    }},
   ],
     canActivate: [CanActivateGuard],//进入视图路由守卫
     canDeactivate:[CanDeactivateGuard]//离开视图路由守卫

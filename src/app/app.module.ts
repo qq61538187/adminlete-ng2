@@ -32,6 +32,7 @@ import { NoteComponent } from './pages/note/note.component';
 import { FloatRightComponent } from './public/float-right/float-right.component';
 import { CanActivateGuard } from './providers/guards/canActivate.guard';
 import { CanDeactivateGuard } from './providers/guards/canDeactivate.guard';
+import { NoteResolve } from './providers/guards/noteDetail.resolve';
 export class FunDebugErrorHandler implements ErrorHandler {
   handleError(err: any): void {
     fundebug.notifyError(err);
@@ -65,6 +66,7 @@ export class FunDebugErrorHandler implements ErrorHandler {
   providers: [
     CanActivateGuard,
     CanDeactivateGuard,
+    NoteResolve,
     HttpConfig,
     HttpService,
     CommonModel,
