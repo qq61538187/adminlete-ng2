@@ -7,6 +7,8 @@ import { NoteDetailComponent } from '../pages/note/note-detail/note-detail.compo
 import { NewNoteComponent } from './../pages/note/new-note/new-note.component';
 import { NoteComponent } from '../pages/note/note.component';
 import { FloatRightComponent } from '../public/float-right/float-right.component';
+import { CanActivateGuard } from './guards/canActivate.guard';
+import { CanDeactivateGuard } from './guards/canDeactivate.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/note/noteList', pathMatch: 'full' },//重定向路由 full：精准匹配  prefix 包含匹配
   {path: 'note', component: NoteComponent, children: [
@@ -15,7 +17,9 @@ const routes: Routes = [
     {path:'noteEdit',component:NewNoteComponent},
     { path: 'noteClassify', component: NoteClassifyComponent },
     { path: 'noteDetail/:id', component: NoteDetailComponent },
-  ]
+  ],
+    canActivate: [CanActivateGuard],//进入视图路由守卫
+    canDeactivate:[CanDeactivateGuard]//离开视图路由守卫
   }, //子路由配置信息 
   { path: 'floatright', component: FloatRightComponent, outlet: 'floatright' },//辅助路由
   // <li><a   [routerLink]="[{outlets:{primary:'/note',floatright:'floatright'}}]">开启辅助路由</a></li> 
@@ -61,6 +65,16 @@ export class AppRoutingModule {
   <li><a   [routerLink]="[{outlets:{floatright:null}}]">关闭辅助路由</a></li>
    * 
   */
+ 
+  /**
+   * 路由守卫
+   * CanActivate: 处理导航到某路由的情况
+   * CanDeactivate:处理从当前路由离开的情况
+   * Resolve:在路由激活前获取路由数据
+   * */  
+
+
+
   
 
 

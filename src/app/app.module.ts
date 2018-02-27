@@ -30,6 +30,8 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { NoteDetailComponent } from './pages/note/note-detail/note-detail.component';
 import { NoteComponent } from './pages/note/note.component';
 import { FloatRightComponent } from './public/float-right/float-right.component';
+import { CanActivateGuard } from './providers/guards/canActivate.guard';
+import { CanDeactivateGuard } from './providers/guards/canDeactivate.guard';
 export class FunDebugErrorHandler implements ErrorHandler {
   handleError(err: any): void {
     fundebug.notifyError(err);
@@ -61,6 +63,8 @@ export class FunDebugErrorHandler implements ErrorHandler {
     AppRoutingModule
   ],
   providers: [
+    CanActivateGuard,
+    CanDeactivateGuard,
     HttpConfig,
     HttpService,
     CommonModel,
