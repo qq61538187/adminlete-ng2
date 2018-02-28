@@ -12,6 +12,7 @@ import { CanDeactivateGuard } from './guards/canDeactivate.guard';
 import { NoteResolve } from './guards/noteDetail.resolve';
 import { AngularApiComponent } from '../pages/angular-api/angular-api.component';
 import { ApiDataBindComponent } from '../pages/angular-api/api-data-bind/api-data-bind.component';
+import { ApiResponsiveComponent } from '../pages/angular-api/api-responsive/api-responsive.component';
 const routes: Routes = [
   { path: '', redirectTo: '/api/databind', pathMatch: 'full' },//重定向路由 full：精准匹配  prefix 包含匹配
   {path: 'note', component: NoteComponent, children: [
@@ -30,7 +31,9 @@ const routes: Routes = [
 
   {path: 'api', component: AngularApiComponent, children: [
     { path: '', redirectTo: 'databind', pathMatch: 'full' },
-    { path: 'databind', component: ApiDataBindComponent }]
+    { path: 'databind', component: ApiDataBindComponent },
+    { path: 'responsive', component: ApiResponsiveComponent }
+  ]
   },
 
 

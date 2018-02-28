@@ -3,7 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
 import { AppRoutingModule } from './providers/app-routing.module';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -35,6 +35,7 @@ import { CanDeactivateGuard } from './providers/guards/canDeactivate.guard';
 import { NoteResolve } from './providers/guards/noteDetail.resolve';
 import { AngularApiComponent } from './pages/angular-api/angular-api.component';
 import { ApiDataBindComponent } from './pages/angular-api/api-data-bind/api-data-bind.component';
+import { ApiResponsiveComponent } from './pages/angular-api/api-responsive/api-responsive.component';
 export class FunDebugErrorHandler implements ErrorHandler {
   handleError(err: any): void {
     fundebug.notifyError(err);
@@ -61,11 +62,14 @@ export class FunDebugErrorHandler implements ErrorHandler {
     FloatRightComponent,
     AngularApiComponent,
     ApiDataBindComponent,
+    ApiResponsiveComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CanActivateGuard,
