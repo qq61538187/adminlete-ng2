@@ -10,8 +10,10 @@ import { FloatRightComponent } from '../public/float-right/float-right.component
 import { CanActivateGuard } from './guards/canActivate.guard';
 import { CanDeactivateGuard } from './guards/canDeactivate.guard';
 import { NoteResolve } from './guards/noteDetail.resolve';
+import { AngularApiComponent } from '../pages/angular-api/angular-api.component';
+import { ApiDataBindComponent } from '../pages/angular-api/api-data-bind/api-data-bind.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/note/noteList', pathMatch: 'full' },//重定向路由 full：精准匹配  prefix 包含匹配
+  { path: '', redirectTo: '/api/databind', pathMatch: 'full' },//重定向路由 full：精准匹配  prefix 包含匹配
   {path: 'note', component: NoteComponent, children: [
     { path: '', redirectTo: 'noteList', pathMatch: 'full' },
     { path: 'noteList', component: NoteListComponent },
@@ -24,6 +26,15 @@ const routes: Routes = [
     canActivate: [CanActivateGuard],//进入视图路由守卫
     canDeactivate:[CanDeactivateGuard]//离开视图路由守卫
   }, //子路由配置信息 
+
+
+  {path: 'api', component: AngularApiComponent, children: [
+    { path: '', redirectTo: 'databind', pathMatch: 'full' },
+    { path: 'databind', component: ApiDataBindComponent }]
+  },
+
+
+
   { path: 'floatright', component: FloatRightComponent, outlet: 'floatright' },//辅助路由
   // <li><a   [routerLink]="[{outlets:{primary:'/note',floatright:'floatright'}}]">开启辅助路由</a></li> 
   // <li><a   [routerLink]="[{outlets:{floatright:'floatright'}}]">开启辅助路由</a></li>

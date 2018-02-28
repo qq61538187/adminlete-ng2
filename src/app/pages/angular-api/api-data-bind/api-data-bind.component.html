@@ -1,0 +1,20 @@
+
+
+<p>单项绑定</p>
+<button  >{{'点击次数数据绑定'+clcikConut}}</button>
+<button  (click)="buttonClick($event)">事件绑定(clcik)</button>
+<p >属性绑定[src]</p>
+<img [src]="imgUrl" ><br>
+<img src="{{imgUrl}}" alt="">
+<p >dom属性 页面生命[属性名] 会动态根据绑定的值改变dom属性的值, 如果没有[] 则视为html属性不会动态改变</p>
+<input value="默认值" (input)="doOnInput($event)">
+<p >html属性绑定   [attr.属性名]</p>
+<p >html属性绑定</p>
+<div class="class1 class2"  [class]="className">ngclass 用法1 </div>
+<div [class.ngclass2]="ngclass">ngclass 用法2 </div>
+<div [ngClass]="{ngclass3:ngclass}">ngclass 用法3 </div>
+<p >html  css类绑定  [style.color]  [ngStyle]</p>
+<button [style.color]="ngclass?'red':'green'">red</button>
+<button [ngStyle]="{'color':ngclass?'green':'red'}">green</button>
+<br><br>
+<p>双向绑定   [(ngModel)]</p>

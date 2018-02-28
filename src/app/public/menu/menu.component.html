@@ -91,7 +91,19 @@
 
 
        <li class="header">API</li>
-
+       <li class="treeview">
+        <a href="#">
+          <i class="fa fa-cog"></i> <span>angular-api</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a (click)="mainCtrl.goPage('/api/databind')" >数据绑定</a></li>
+          <li><a >评论</a></li>
+          <li><a >水印</a></li>
+        </ul>
+      </li>
 
       <!-- 一级导航 <li>
         <a href="https://adminlte.io/docs">

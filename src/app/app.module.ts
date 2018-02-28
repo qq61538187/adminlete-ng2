@@ -33,6 +33,8 @@ import { FloatRightComponent } from './public/float-right/float-right.component'
 import { CanActivateGuard } from './providers/guards/canActivate.guard';
 import { CanDeactivateGuard } from './providers/guards/canDeactivate.guard';
 import { NoteResolve } from './providers/guards/noteDetail.resolve';
+import { AngularApiComponent } from './pages/angular-api/angular-api.component';
+import { ApiDataBindComponent } from './pages/angular-api/api-data-bind/api-data-bind.component';
 export class FunDebugErrorHandler implements ErrorHandler {
   handleError(err: any): void {
     fundebug.notifyError(err);
@@ -57,6 +59,8 @@ export class FunDebugErrorHandler implements ErrorHandler {
     NoteDetailComponent,
     NoteComponent,
     FloatRightComponent,
+    AngularApiComponent,
+    ApiDataBindComponent,
   ],
   imports: [
     BrowserModule,
