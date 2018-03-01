@@ -36,6 +36,8 @@ import { NoteResolve } from './providers/guards/noteDetail.resolve';
 import { AngularApiComponent } from './pages/angular-api/angular-api.component';
 import { ApiDataBindComponent } from './pages/angular-api/api-data-bind/api-data-bind.component';
 import { ApiResponsiveComponent } from './pages/angular-api/api-responsive/api-responsive.component';
+import { TextlengthPipe } from './pipe/textlength.pipe';
+import { ApiPipesComponent } from './pages/angular-api/api-pipes/api-pipes.component';
 export class FunDebugErrorHandler implements ErrorHandler {
   handleError(err: any): void {
     fundebug.notifyError(err);
@@ -63,6 +65,8 @@ export class FunDebugErrorHandler implements ErrorHandler {
     AngularApiComponent,
     ApiDataBindComponent,
     ApiResponsiveComponent,
+    TextlengthPipe,
+    ApiPipesComponent,
   ],
   imports: [
     BrowserModule,
