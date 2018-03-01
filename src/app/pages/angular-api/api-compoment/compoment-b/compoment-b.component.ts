@@ -9,8 +9,9 @@ export class CompomentBComponent implements OnInit {
   @Input()
   private stockInfo;
   constructor() { }
-
+  
   ngOnInit() {
+    console.log(this.stockInfo)
   }
 
 }

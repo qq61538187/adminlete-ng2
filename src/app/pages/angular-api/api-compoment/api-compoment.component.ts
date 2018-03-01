@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./api-compoment.component.css']
 })
 export class ApiCompomentComponent implements OnInit {
-  private stockInfo;
+  private stockInfo = {
+    name: "默认名称",
+    price:1
+  };
   constructor() { }
 
   addCardHandler(stockInfo){
