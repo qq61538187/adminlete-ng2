@@ -4,9 +4,8 @@
 </p>
 <div>
   <input placeholder="请输入搜索关键字" [(ngModel)]="search"><br>
-  <div>已买商品</div>
-  <div *ngIf="stockInfo" >{{stockInfo.name}}</div>
 </div>
 <app-compoment-a [keyWord]="search" (addCart)="addCardHandler($event)"></app-compoment-a>
+<app-compoment-b [stockInfo]="stockInfo"></app-compoment-b>
 
 
