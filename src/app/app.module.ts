@@ -38,6 +38,9 @@ import { ApiDataBindComponent } from './pages/angular-api/api-data-bind/api-data
 import { ApiResponsiveComponent } from './pages/angular-api/api-responsive/api-responsive.component';
 import { TextlengthPipe } from './pipe/textlength.pipe';
 import { ApiPipesComponent } from './pages/angular-api/api-pipes/api-pipes.component';
+import { ApiCompomentComponent } from './pages/angular-api/api-compoment/api-compoment.component';
+import { CompomentAComponent } from './pages/angular-api/api-compoment/compoment-a/compoment-a.component';
+import { CompomentBComponent } from './pages/angular-api/api-compoment/compoment-b/compoment-b.component';
 export class FunDebugErrorHandler implements ErrorHandler {
   handleError(err: any): void {
     fundebug.notifyError(err);
@@ -67,6 +70,9 @@ export class FunDebugErrorHandler implements ErrorHandler {
     ApiResponsiveComponent,
     TextlengthPipe,
     ApiPipesComponent,
+    ApiCompomentComponent,
+    CompomentAComponent,
+    CompomentBComponent,
   ],
   imports: [
     BrowserModule,

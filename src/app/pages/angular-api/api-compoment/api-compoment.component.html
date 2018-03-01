@@ -1,0 +1,12 @@
+<p>
+    组件通讯  input outinput
+    父组件的值会影响到子组件的值，子组件值的改变不会影响到父组件
+</p>
+<div>
+  <input placeholder="请输入搜索关键字" [(ngModel)]="search"><br>
+  <div>已买商品</div>
+  <div *ngIf="stockInfo" >{{stockInfo.name}}</div>
+</div>
+<app-compoment-a [keyWord]="search" (addCart)="addCardHandler($event)"></app-compoment-a>
+
+
